@@ -7,7 +7,42 @@ import {Card,CardImg,CardImgOverlay,CardText,CardBody,
 class DishDetail extends Component
 {
     
-
+    renderComments(comments)
+    {
+        if(comments!=null)
+        {
+            const commentcomp = comments.map(comment =>{
+                return(
+                    <li key={comment.id} >
+                        <p>{comment.comment}</p>
+                        <p>--{comment.author}
+                        <br />
+                        &nbsp;
+                        {new Intl.DateTimeFormat('en-US', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: '2-digit'
+                        }).format(new Date(comment.date))}
+                        </p>
+                    </li>
+                )
+            })
+            return(
+                <div className='col-12 col-md-5 m-1'>
+                    <h4> Comments </h4>
+                    <ul className='list-unstyled'>
+                        {commentcomp}
+                    </ul>
+    
+                </div>
+            )
+        }
+        else
+        {
+            return(<div></div>)
+        }
+    }
+    
     renderDish(dish)
     {
         if (dish!=null)
@@ -19,10 +54,12 @@ class DishDetail extends Component
                     <CardBody>
                         <CardTitle>{dish.name}</CardTitle>
                         <CardText>{dish.description}</CardText>
-
+                        
                     </CardBody>
+                    
                 </Card>
-            </div>
+                
+                </div>
             )    
         }
         else
@@ -35,9 +72,15 @@ class DishDetail extends Component
 
     render()
     {
+        const dish=this.props.dish
+        if (dish==null)
+        {
+            return (<div></div>)
+        }
         return(
             <div className="row">
-                {this.renderDish(this.props.dish)}
+                {this.renderDish(dish)}
+                {this.renderComments(dish.comments)}
             </div>
         )
     }
