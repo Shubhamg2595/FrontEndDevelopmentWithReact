@@ -43,7 +43,7 @@ function RenderComments({comments})
         if (dish!=null)
         {
             return(
-            <div className="col-12 col-md-5 m-1">
+            <div >
                 <Card>
                     <CardImg width="100%" src={dish.image} alt={dish.name}/>
                     <CardBody>
