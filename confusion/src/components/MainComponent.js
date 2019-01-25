@@ -49,6 +49,13 @@ class Main extends Component {
     };
 
 
+    const AboutUs = () =>
+    {
+      return(
+        <About leaders={this.state.leaders} />
+      )
+    } 
+
     return (
       <div>
       <Header />
@@ -60,7 +67,7 @@ class Main extends Component {
 
           <Route path="/menu/:dishId" component={DishWithId} />
 
-          <Route path="/about" component={() => <About leaders={this.state.leaders} />} /> 
+          <Route path="/about" component={AboutUs} />} /> 
 
           <Route exact path='/contactus' component={Contact} />
 
