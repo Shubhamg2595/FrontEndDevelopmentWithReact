@@ -4,7 +4,7 @@ import {Card,CardImg,CardImgOverlay,CardText,CardBody,
 import { Link } from 'react-router-dom';
 import CommentForm from './CommentForm';
 
-function RenderComments({comments})
+function RenderComments({comments , addComment,dishId})
     {
         if(comments!=null)
         {
@@ -29,7 +29,9 @@ function RenderComments({comments})
                     <h4> Comments </h4>
                     <ul className='list-unstyled'>
                         {commentcomp}
-                        <CommentForm/>
+                        <CommentForm 
+                        dishId = {dishId}
+                        addComment={addComment}/>
                     </ul>
     
                 </div>
@@ -94,7 +96,10 @@ function RenderComments({comments})
                     <RenderDish dish={props.dish} />
                 </div>
                 <div className="col-12 col-md-5 m-1">
-                    <RenderComments comments={props.comments} />
+                    <RenderComments 
+                    comments={props.comments}
+                    addComment={props.addComment}
+                    dishId={props.dish.id} />
                 </div>
             </div>
             </div>
