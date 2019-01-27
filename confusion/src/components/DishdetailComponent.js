@@ -2,6 +2,7 @@ import React , {Component} from 'react';
 import {Card,CardImg,CardImgOverlay,CardText,CardBody,
     CardTitle,Breadcrumb, BreadcrumbItem} from 'reactstrap';
 import { Link } from 'react-router-dom';
+import CommentForm from './CommentForm';
 
 function RenderComments({comments})
     {
@@ -19,14 +20,16 @@ function RenderComments({comments})
                             day: '2-digit'
                         }).format(new Date(comment.date))}
                         </p>
-                    </li>
+                     </li>
+                  
                 )
             })
             return(
-                <div className='col-12 col-md-5 m-1'>
+                <div>
                     <h4> Comments </h4>
                     <ul className='list-unstyled'>
                         {commentcomp}
+                        <CommentForm/>
                     </ul>
     
                 </div>
