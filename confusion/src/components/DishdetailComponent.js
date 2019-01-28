@@ -6,6 +6,7 @@ import {
 import { Link } from 'react-router-dom';
 import CommentForm from './CommentForm';
 import { Loading } from './LoadingComponent';
+
 function RenderComments({ comments, addComment, dishId }) {
     if (comments != null) {
         const commentcomp = comments.map(comment => {

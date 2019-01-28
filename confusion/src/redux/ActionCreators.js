@@ -24,9 +24,9 @@ export const fetchDishes = () => (dispatch) => {
     }, 2000);
 }
 
-export const dishesLoading = () => ({
+export const dishesLoading = () =>  ({
     type: ActionTypes.DISHES_LOADING
-});
+}); 
 
 export const dishesFailed = (errmess) => ({
     type: ActionTypes.DISHES_FAILED,
