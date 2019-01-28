@@ -10,11 +10,6 @@ import logger from 'redux-logger'
 import { InitialFeedback } from './forms';
  
 
-/*
-so we have created 4 different reducers and 
-now to combine them, we will use combineReducers 
-method provided by redux
-*/
 
 export const ConfigureStore = () => {
     const store = createStore(
