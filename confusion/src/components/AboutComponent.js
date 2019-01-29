@@ -2,10 +2,12 @@ import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { baseUrl } from '../shared/baseUrl'; 
+import { Fade  } from 'react-animation-components';
 
 function RenderLeader({leader})
 {
     return(
+        <Fade in enterOpacity={0.85} key={leader.id}>
         <div key={leader.id} className="col-12 mt-5">
             <Media tag="li">
                 <Media left middle>
@@ -21,6 +23,7 @@ function RenderLeader({leader})
            
 
         </div>
+        </Fade>
     )
 }
 
